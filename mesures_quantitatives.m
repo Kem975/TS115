@@ -17,7 +17,6 @@ proba_X2 = zeros(length(axe2));
 proba_X1X2 = zeros(length(axe12));
 
 %MAIS PUTAIN REGARDE MOI LE TYPE DE AXE1, AXE2, AXE12
-axe1((1,1))
 
 figure
 subplot(3,1,1)
@@ -39,3 +38,4 @@ Y3 = cov(X_Nnt, X_Stg);
 a = corrcoef(X_Bdx, X_Nnt)
 b = corrcoef(Y2)
 b = corrcoef(Y3)
+

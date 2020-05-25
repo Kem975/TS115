@@ -13,9 +13,11 @@ for index=[1:N]
 end
 
 figure,
-histogram2(y(1,:),y(2,:),25);
+histogram2(y(1,:),y(2,:),25,'FaceColor','flat');
+colorbar
 
 figure,
-histogram2(x(1,:),x(2,:),25);
+histogram2(x(1,:),x(2,:),25,'FaceColor','flat');
+colorbar
 
 R=corrcoef(transpose(y));

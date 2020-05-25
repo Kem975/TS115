@@ -2,7 +2,7 @@ clear; clc; close all;
 
 %Variables
 N = 10001;
-et = 20;
+et = 25;
 sigma = sqrt(9);
 mu=2;
 
