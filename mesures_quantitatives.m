@@ -12,12 +12,31 @@ X_Stg = X_pluv(:,3);
 [it_X1X2, axe12] = hist3(X_pluv(:,1:2),[20,20]); %Histogramme X1 et X2
 
 %initalisation pour les calculs de proba de chaque valeur
-proba_X1 = zeros(length(axe1));
-proba_X2 = zeros(length(axe2));
-proba_X1X2 = zeros(length(axe12));
+proba_X1 = zeros(20,1);
+proba_X2 = zeros(20,1);
+proba_X1X2 = zeros(20,20);
 
-%MAIS PUTAIN REGARDE MOI LE TYPE DE AXE1, AXE2, AXE12
-axe1((1,1))
+
+sum=0;
+for i=1:1:20
+    proba_X1(i) = it_X1(i)/1200;
+    proba_X2(i) = it_X2(i)/1200;
+    for j=1:1:20
+        proba_X1X2(i,j) = it_X1X2(i,j)/1200;
+    end
+end
+
+
+sum = 0
+for i=1:1:20
+    for j=1:1:20
+        proba_X1X2(i,j)
+        sum = sum + proba_X1X2(i,j)*log((proba_X1X2(i,j))/(proba_X1(i)*proba_X2(j)));
+    end
+end
+sum
+
+axe1{1,1};
 
 figure
 subplot(3,1,1)
@@ -36,6 +55,5 @@ Y1 = cov(X_Bdx, X_Nnt);
 Y2 = cov(X_Bdx, X_Stg);
 Y3 = cov(X_Nnt, X_Stg);
 
-a = corrcoef(X_Bdx, X_Nnt)
-b = corrcoef(Y2)
-b = corrcoef(Y3)
+a = corrcoef(X_Bdx, X_Nnt);
+
