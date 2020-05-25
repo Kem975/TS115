@@ -18,9 +18,9 @@ Y3 = cov(X_Nnt, X_Stg);
 [it_X1X2, axe12] = hist3(X_pluv(:,1:2),[20,20]); %Histogramme X1 et X2
 
 %initalisation pour les calculs de proba de chaque valeur
-proba_X1 = zeros(length(axe1));
-proba_X2 = zeros(length(axe2));
-proba_X1X2 = zeros(length(axe12));
+proba_X1 = zeros(1,20);
+proba_X2 = zeros(1,20);
+proba_X1X2 = zeros(20,20);
 
 
 %Calcul des probas
@@ -48,20 +48,17 @@ information_mutuelle = sum %Info mutuelle entre X1 et X2
 figure
 subplot(3,1,1)
 hist3(X_pluv(:,1:2),[20,1]);
-title('Sachant X1');
+title('Proba X2 sachant X1');
 subplot(3,1,2)
 hist3(X_pluv(:,1:2),[1,20]);
-title('Sachant X2');
+title('Proba X1 sachant X2');
 subplot(3,1,3)
 hist3(X_pluv(:,1:2),[20,20]);
-title('Selon X1 et X2');
+title('Proba X1 et X2');
 
 
 
 
-a = corrcoef(X_Bdx, X_Nnt)
-b = corrcoef(Y2)
-b = corrcoef(Y3)
 
 
 

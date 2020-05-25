@@ -2,7 +2,7 @@ clear; clc; close all;
 
 %Variables
 N = 10001;
-et = 25;
+et = 25; %nombre de bars dans l'histogramme
 sigma = sqrt(9);
 mu=2;
 
